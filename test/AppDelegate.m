@@ -14,9 +14,22 @@
 
 @implementation AppDelegate
 
+-(UIWindow *)window
+{
+    if (!_window) _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    return _window;
+}
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+-(JRTMainRouter *)mainRouter
+{
+    if (!_mainRouter) _mainRouter = [JRTMainRouter new];
+    return _mainRouter;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window.rootViewController = [self.mainRouter rootViewController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -43,3 +56,4 @@
 }
 
 @end
+
