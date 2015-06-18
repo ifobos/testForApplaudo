@@ -7,6 +7,8 @@
 //
 
 #import "JSONModel.h"
+
+//this model class is used to receive the json objects 
 @protocol ScheduleEntity @end
 
 @interface VenueEntity : JSONModel

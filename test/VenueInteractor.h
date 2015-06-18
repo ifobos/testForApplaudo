@@ -7,7 +7,7 @@
 //
 
 #import "JRTViperInteractorClass.h"
-
+//This class is responsible for business logic
 @interface VenueInteractor : JRTViperInteractorClass
 - (void)loadVenues;
 @end

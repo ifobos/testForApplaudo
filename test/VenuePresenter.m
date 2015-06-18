@@ -30,6 +30,9 @@
 
 - (NSString*)name
 {
+    if(!self.venue)self.venueViewController.view.hidden = YES;
+    else self.venueViewController.view.hidden = NO;
+    
     if ([self.venue.name length] > 0) return self.venue.name;
     else return @"--";
 }
@@ -101,17 +104,23 @@
 
 - (NSString*)startDateScheduleAtIndex:(NSInteger)index
 {
-
     ScheduleEntity *targetSchedule =  [self.venue.schedule objectAtIndex:index];
-   return [NSString stringWithFormat:@"Start: %@",[NSDateFormatter localizedStringFromDate:targetSchedule.startDate dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle]];
-
+    return [NSString stringWithFormat:@"Start:  %@",[[self dateFormatter] stringFromDate:targetSchedule.startDate]];
 }
 
 - (NSString*)endDateScheduleAtIndex:(NSInteger)index
 {
     ScheduleEntity *targetSchedule =  [self.venue.schedule objectAtIndex:index];
-    return [NSString stringWithFormat:@"End: %@",[NSDateFormatter localizedStringFromDate:targetSchedule.endDate dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle]];
+    return [NSString stringWithFormat:@"End:  %@",[[self dateFormatter] stringFromDate:targetSchedule.endDate]];
+}
 
+- (NSDateFormatter *)dateFormatter
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    return formatter;
 }
 
 - (void)refreshView

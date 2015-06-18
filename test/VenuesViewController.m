@@ -50,7 +50,6 @@
     static NSString *simpleTableIdentifier  = @"cell";
     UITableViewCell *cell                   = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (!cell) cell                         = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
-    cell.selectionStyle                     = UITableViewCellSelectionStyleNone;
     cell.accessoryType                      = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text                     = [self.venuesPresenter nameAtIndex:indexPath.row];
     cell.detailTextLabel.text               = [self.venuesPresenter midAddressAtIndex: indexPath.row];

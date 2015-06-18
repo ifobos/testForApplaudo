@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-#import "JRTViperRouterProtocol.h"
+#import "JRTViperRouterProtocol.h" //this protocol is used to define classes conform to routers class of VIPER Pattern
 
 @interface JRTMainRouter : NSObject
 @property (nonatomic, strong) id<RouterProtocol> firstRouter;

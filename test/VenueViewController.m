@@ -33,12 +33,13 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         self.navigationItem.leftBarButtonItem = [((UISplitViewController *)[[JRTMainRouter sharedInstance] rootViewController]) displayModeButtonItem];
         self.navigationItem.leftItemsSupplementBackButton = YES;
     }
+    [super viewDidLoad];
+    
     [self setUp];
     [self loadFromPresenter];
 }

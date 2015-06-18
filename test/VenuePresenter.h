@@ -10,6 +10,9 @@
 #import "VenueEntity.h"
 #import <MapKit/MapKit.h>
 
+//the presenter is responsible to formatting data,
+//present the actions to interactor
+
 @interface VenuePresenter : JRTViperPresenterClass
 - (void)setVenue:(VenueEntity *)venue;
 

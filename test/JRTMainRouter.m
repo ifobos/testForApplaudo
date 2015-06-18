@@ -19,6 +19,9 @@ NSString * const kSecondRouter  = @"VenueRouter";
 
 @implementation JRTMainRouter
 
+#pragma mark - Singleton
+
+//this is a singleton using GCD
 + (instancetype)sharedInstance
 {
     static dispatch_once_t once;
@@ -32,7 +35,9 @@ NSString * const kSecondRouter  = @"VenueRouter";
     return sharedInstance;
 }
 
+#pragma mark - Getters
 
+//lazy instantiation is used for the most part of properties like mainNavigationController
 - (UINavigationController *)mainNavigationController
 {
     if (!_mainNavigationController)
@@ -68,8 +73,11 @@ NSString * const kSecondRouter  = @"VenueRouter";
     return _secondRouter;
 }
 
+#pragma mark - Public
+
 - (id)rootViewController
 {
+//    navigation structure depends on the device in the application is executed (iPad or iPhone)
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) return self.splitViewController;
     else return self.mainNavigationController;
 }

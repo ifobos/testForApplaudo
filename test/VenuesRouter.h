@@ -8,6 +8,10 @@
 
 #import "JRTViperRouterClass.h"
 
+//This class is responsible for launching the viewcontrollers,
+//is also responsible for the link between instances:
+//presenter, viewcontroller, and himself
+
 @interface VenuesRouter : JRTViperRouterClass
 
 @end

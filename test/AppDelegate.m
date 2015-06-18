@@ -28,7 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window.rootViewController = [self.mainRouter rootViewController];
+    
+    self.window.rootViewController = [self.mainRouter rootViewController]; //mainRouter It is responsible for loading the main navigation structure of the application
     [self.window makeKeyAndVisible];
     return YES;
 }

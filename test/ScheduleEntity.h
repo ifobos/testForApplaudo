@@ -7,7 +7,7 @@
 //
 
 #import "JSONModel.h"
-
+//this model class is used to receive the json sub-objects
 @interface ScheduleEntity : JSONModel
 @property (nonatomic, strong)NSDate *startDate;
 @property (nonatomic, strong)NSDate *endDate;

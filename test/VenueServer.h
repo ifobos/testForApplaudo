@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//esta clase se utiliza como conector de servicio con la nube
 @interface VenueServer : NSObject
 - (void)listWithSuccess:(void (^)(NSArray *venues))success failure:(void (^)(NSError *error))failure;
 @end

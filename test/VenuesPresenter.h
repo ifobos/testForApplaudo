@@ -8,6 +8,10 @@
 
 #import "JRTViperPresenterClass.h"
 
+//the presenter is responsible to formatting data,
+//present the actions to interactor and present load
+//action to next router will be loaded
+
 @interface VenuesPresenter : JRTViperPresenterClass
 - (NSString *)nameAtIndex:(NSInteger)index;
 - (NSString *)midAddressAtIndex:(NSInteger)index;
