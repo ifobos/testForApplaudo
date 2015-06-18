@@ -26,4 +26,6 @@
 - (NSString*)startDateScheduleAtIndex:(NSInteger)index;
 - (NSString*)endDateScheduleAtIndex:(NSInteger)index;
 
+- (void)refreshView;
+
 @end

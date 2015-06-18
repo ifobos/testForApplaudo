@@ -7,5 +7,6 @@
 //
 
 #import "JRTViperTableViewControllerClass.h"
-@interface VenueViewController : JRTViperTableViewControllerClass
+@interface VenueViewController : JRTViperTableViewControllerClass <UISplitViewControllerDelegate>
+- (void)loadFromPresenter;
 @end

@@ -8,12 +8,20 @@
 
 #import "VenuePresenter.h"
 #import "ScheduleEntity.h"
+#import "VenueViewController.h"
+
 @interface VenuePresenter ()
 @property (nonatomic, strong)VenueEntity *venue;
+@property (nonatomic, readonly)VenueViewController *venueViewController;
 @end
 
 
 @implementation VenuePresenter
+
+-(VenueViewController *)venueViewController
+{
+    return (VenueViewController *)self.viewController;
+}
 
 - (void)setVenue:(VenueEntity *)venue
 {
@@ -106,5 +114,9 @@
 
 }
 
+- (void)refreshView
+{
+    [self.venueViewController loadFromPresenter];
+}
 
 @end

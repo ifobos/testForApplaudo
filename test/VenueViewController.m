@@ -10,6 +10,7 @@
 #import "VenuePresenter.h"
 #import <MapKit/MapKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "JRTMainRouter.h"
 
 @interface VenueViewController ()<MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -19,12 +20,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *tollFreePhoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UILabel *scheduleLabel;
 @property (nonatomic, readonly)VenuePresenter *venuePresenter;
 @end
 
 @implementation VenueViewController
-
-
 
 - (VenuePresenter *)venuePresenter
 {
@@ -34,6 +34,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        self.navigationItem.leftBarButtonItem = [((UISplitViewController *)[[JRTMainRouter sharedInstance] rootViewController]) displayModeButtonItem];
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+    }
     [self setUp];
     [self loadFromPresenter];
 }
@@ -52,8 +57,10 @@
     self.addressLabel.text          = [self.venuePresenter fullAddress];
     self.descriptionLabel.text      = [self.venuePresenter venueDescription];
     [self.imageView sd_setImageWithURL:[self.venuePresenter imageUrl]];
+    [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView setRegion: [self.mapView regionThatFits: [self.venuePresenter region] ] animated: YES];
     [self.mapView addAnnotation:[self.venuePresenter point]];
+    [self.tableView reloadData];
 }
 
 
@@ -66,7 +73,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.venuePresenter numberOfSchedule];
+    NSInteger number = [self.venuePresenter numberOfSchedule];
+    self.scheduleLabel.hidden = (number == 0);
+    return number;
 }
 
 
@@ -97,5 +106,6 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
 }
+
 
 @end

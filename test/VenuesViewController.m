@@ -31,11 +31,6 @@
     [self.tableView reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    self.tableView.userInteractionEnabled = YES;
-}
 
 #pragma mark - Table view data source
 
@@ -69,7 +64,7 @@
 {
     self.tableView.userInteractionEnabled = NO;
     [self.venuesPresenter goToVenueAtIndex:indexPath.row];
-    
+    self.tableView.userInteractionEnabled = YES;
 }
 
 @end

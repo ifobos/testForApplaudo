@@ -10,5 +10,6 @@
 #import "VenueEntity.h"
 
 @interface VenueRouter : JRTViperRouterClass
+- (void)presenterSetVenue:(VenueEntity*)venue;
 - (void)pushInNavigationController:(UINavigationController*)navigationController animated:(BOOL)animated withVenue:(VenueEntity*)venue;
 @end

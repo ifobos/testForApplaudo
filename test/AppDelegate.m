@@ -22,7 +22,7 @@
 
 -(JRTMainRouter *)mainRouter
 {
-    if (!_mainRouter) _mainRouter = [JRTMainRouter new];
+    if (!_mainRouter) _mainRouter = [JRTMainRouter sharedInstance];
     return _mainRouter;
 }
 

@@ -20,11 +20,16 @@
     return (VenuePresenter *)self.presenter;
 }
 
+- (void)presenterSetVenue:(VenueEntity*)venue
+{
+   [self.venuePresenter setVenue:venue];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) [self.venuePresenter refreshView];
+}
+
 - (void)pushInNavigationController:(UINavigationController*)navigationController animated:(BOOL)animated withVenue:(VenueEntity*)venue
 {
+    [self presenterSetVenue:venue];
     [super pushInNavigationController:navigationController animated:animated];
-    [self.venuePresenter setVenue:venue];
-    
 }
 
 @end

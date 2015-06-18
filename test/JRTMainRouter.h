@@ -7,7 +7,12 @@
 //
 
 @import UIKit;
+#import "JRTViperRouterProtocol.h"
 
 @interface JRTMainRouter : NSObject
+@property (nonatomic, strong) id<RouterProtocol> firstRouter;
+@property (nonatomic, strong) id<RouterProtocol> secondRouter;
+
 - (id)rootViewController;
++ (instancetype)sharedInstance;
 @end

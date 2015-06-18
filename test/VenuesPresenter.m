@@ -11,6 +11,7 @@
 #import "VenuesViewController.h"
 #import "VenueEntity.h"
 #import "VenueRouter.h"
+#import "JRTMainRouter.h"
 
 @interface VenuesPresenter ()
 @property(nonatomic, readonly)VenueInteractor *venueInteractor;
@@ -69,7 +70,15 @@
 - (void)goToVenueAtIndex:(NSInteger)index
 {
     VenueRouter *venueRouter = [VenueRouter new];
-    [venueRouter pushInNavigationController:self.venuesViewController.navigationController animated:YES withVenue:[self.venues objectAtIndex:index]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        [((VenueRouter*)[JRTMainRouter sharedInstance].secondRouter) presenterSetVenue:[self.venues objectAtIndex:index]];
+    }
+    else [venueRouter pushInNavigationController:self.venuesViewController.navigationController animated:YES withVenue:[self.venues objectAtIndex:index]];
+
+
+
     
 }
 
