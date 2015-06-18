@@ -34,19 +34,12 @@
 {
     [self.venueRepository listWithSuccess:^(NSArray *venues)
     {
-        //TODO: - JC - mandar al presentador
         [self.venuesPresenter presentToView:venues];
-        
 
-    } failure:^(NSError *error) {
-        //TODO: - JC - presentar error
+    } failure:^(NSError *error)
+    {
+        NSLog(@"Error %@",error);
     }];
-    
-    //TODO: - JC - show activiti indicator
-    //TODO: - JC - success or failure
-    //TODO: - JC - remove activiti indicator
-    
-    
 }
 
 @end
