@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'test' do
-pod 'JRTViperPattern'
+#pod 'JRTViperPattern'
 pod "AFNetworking", "~> 2.0"
 pod 'JSONModel'
 pod 'SDWebImage', '~>3.7'

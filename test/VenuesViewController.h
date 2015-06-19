@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
-#import "JRTViperTableViewControllerClass.h"
+@import UIKit;
 
-@interface VenuesViewController : JRTViperTableViewControllerClass
-- (void)loadFromPresenter;
+@interface VenuesViewController : UITableViewController
 @end

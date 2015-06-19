@@ -7,30 +7,30 @@
 //
 
 #import "VenuesViewController.h"
-#import "VenuesPresenter.h"
+#import "VenuesController.h"
+
 @interface VenuesViewController ()
-@property (nonatomic, readonly)VenuesPresenter *venuesPresenter;
+@property (nonatomic, strong)VenuesController *venuesController;
 @end
 
 @implementation VenuesViewController
 
--(VenuesPresenter *)venuesPresenter
+-(VenuesController *)venuesController
 {
-    return (VenuesPresenter*)self.presenter;
+    if (!_venuesController)
+    {
+        _venuesController = [VenuesController new];
+        _venuesController.venuesViewController = self;
+    }
+    return _venuesController;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"Venues";
-    [self loadFromPresenter];
+    
 }
-
-- (void)loadFromPresenter
-{
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - Table view data source
 
@@ -41,7 +41,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.venuesPresenter numberOfVenues];
+    return [self.venuesController numberOfVenues];
 }
 
 
@@ -51,8 +51,8 @@
     UITableViewCell *cell                   = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (!cell) cell                         = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     cell.accessoryType                      = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text                     = [self.venuesPresenter nameAtIndex:indexPath.row];
-    cell.detailTextLabel.text               = [self.venuesPresenter midAddressAtIndex: indexPath.row];
+    cell.textLabel.text                     = [self.venuesController nameAtIndex:indexPath.row];
+    cell.detailTextLabel.text               = [self.venuesController midAddressAtIndex: indexPath.row];
     return cell;
 }
 
@@ -62,7 +62,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.tableView.userInteractionEnabled = NO;
-    [self.venuesPresenter goToVenueAtIndex:indexPath.row];
+    [self.venuesController goToVenueAtIndex:indexPath.row];
     self.tableView.userInteractionEnabled = YES;
 }
 

@@ -8,20 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		314C98521B32657D007E95C7 /* JRTMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98511B32657D007E95C7 /* JRTMainRouter.m */; };
-		314C98551B326644007E95C7 /* VenueRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98541B326644007E95C7 /* VenueRouter.m */; };
 		314C98591B32672D007E95C7 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98571B32672D007E95C7 /* VenuesViewController.m */; };
 		314C985A1B32672D007E95C7 /* VenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314C98581B32672D007E95C7 /* VenuesViewController.xib */; };
-		314C985D1B3268FF007E95C7 /* VenuesRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C985C1B3268FF007E95C7 /* VenuesRouter.m */; };
-		314C98601B326A42007E95C7 /* VenuesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C985F1B326A42007E95C7 /* VenuesPresenter.m */; };
-		314C98631B326A86007E95C7 /* VenueInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98621B326A86007E95C7 /* VenueInteractor.m */; };
-		314C98661B326B14007E95C7 /* VenueEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98651B326B14007E95C7 /* VenueEntity.m */; };
-		314C98691B327233007E95C7 /* ScheduleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98681B327233007E95C7 /* ScheduleEntity.m */; };
+		314C98661B326B14007E95C7 /* VenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98651B326B14007E95C7 /* VenueModel.m */; };
+		314C98691B327233007E95C7 /* ScheduleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98681B327233007E95C7 /* ScheduleModel.m */; };
 		314C986D1B32738B007E95C7 /* VenueRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C986C1B32738B007E95C7 /* VenueRepository.m */; };
 		314C98711B329E8B007E95C7 /* VenueServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98701B329E8B007E95C7 /* VenueServer.m */; };
 		314C98751B32C580007E95C7 /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98731B32C580007E95C7 /* VenueViewController.m */; };
 		314C98761B32C580007E95C7 /* VenueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314C98741B32C580007E95C7 /* VenueViewController.xib */; };
 		314C98781B32D0BF007E95C7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 314C98771B32D0BF007E95C7 /* MapKit.framework */; };
-		314C987B1B32D95F007E95C7 /* VenuePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C987A1B32D95F007E95C7 /* VenuePresenter.m */; };
+		314C988F1B339314007E95C7 /* VenuesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C988E1B339314007E95C7 /* VenuesController.m */; };
+		314C98921B339B3A007E95C7 /* VenueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98911B339B3A007E95C7 /* VenueController.m */; };
 		31758D8D1B325FFA009EE8B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31758D8C1B325FFA009EE8B6 /* main.m */; };
 		31758D901B325FFA009EE8B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31758D8F1B325FFA009EE8B6 /* AppDelegate.m */; };
 		31758D981B325FFA009EE8B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31758D971B325FFA009EE8B6 /* Images.xcassets */; };
@@ -43,21 +40,13 @@
 /* Begin PBXFileReference section */
 		314C98501B32657D007E95C7 /* JRTMainRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTMainRouter.h; sourceTree = "<group>"; };
 		314C98511B32657D007E95C7 /* JRTMainRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTMainRouter.m; sourceTree = "<group>"; };
-		314C98531B326644007E95C7 /* VenueRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueRouter.h; sourceTree = "<group>"; };
-		314C98541B326644007E95C7 /* VenueRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueRouter.m; sourceTree = "<group>"; };
 		314C98561B32672D007E95C7 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		314C98571B32672D007E95C7 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		314C98581B32672D007E95C7 /* VenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenuesViewController.xib; sourceTree = "<group>"; };
-		314C985B1B3268FF007E95C7 /* VenuesRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesRouter.h; sourceTree = "<group>"; };
-		314C985C1B3268FF007E95C7 /* VenuesRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesRouter.m; sourceTree = "<group>"; };
-		314C985E1B326A42007E95C7 /* VenuesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesPresenter.h; sourceTree = "<group>"; };
-		314C985F1B326A42007E95C7 /* VenuesPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesPresenter.m; sourceTree = "<group>"; };
-		314C98611B326A86007E95C7 /* VenueInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueInteractor.h; sourceTree = "<group>"; };
-		314C98621B326A86007E95C7 /* VenueInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueInteractor.m; sourceTree = "<group>"; };
-		314C98641B326B14007E95C7 /* VenueEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueEntity.h; sourceTree = "<group>"; };
-		314C98651B326B14007E95C7 /* VenueEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueEntity.m; sourceTree = "<group>"; };
-		314C98671B327233007E95C7 /* ScheduleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleEntity.h; sourceTree = "<group>"; };
-		314C98681B327233007E95C7 /* ScheduleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleEntity.m; sourceTree = "<group>"; };
+		314C98641B326B14007E95C7 /* VenueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueModel.h; sourceTree = "<group>"; };
+		314C98651B326B14007E95C7 /* VenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueModel.m; sourceTree = "<group>"; };
+		314C98671B327233007E95C7 /* ScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleModel.h; sourceTree = "<group>"; };
+		314C98681B327233007E95C7 /* ScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleModel.m; sourceTree = "<group>"; };
 		314C986B1B32738B007E95C7 /* VenueRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueRepository.h; sourceTree = "<group>"; };
 		314C986C1B32738B007E95C7 /* VenueRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueRepository.m; sourceTree = "<group>"; };
 		314C986F1B329E8B007E95C7 /* VenueServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueServer.h; sourceTree = "<group>"; };
@@ -66,8 +55,10 @@
 		314C98731B32C580007E95C7 /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueViewController.m; sourceTree = "<group>"; };
 		314C98741B32C580007E95C7 /* VenueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueViewController.xib; sourceTree = "<group>"; };
 		314C98771B32D0BF007E95C7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		314C98791B32D95F007E95C7 /* VenuePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePresenter.h; sourceTree = "<group>"; };
-		314C987A1B32D95F007E95C7 /* VenuePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuePresenter.m; sourceTree = "<group>"; };
+		314C988D1B339314007E95C7 /* VenuesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesController.h; sourceTree = "<group>"; };
+		314C988E1B339314007E95C7 /* VenuesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesController.m; sourceTree = "<group>"; };
+		314C98901B339B3A007E95C7 /* VenueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueController.h; sourceTree = "<group>"; };
+		314C98911B339B3A007E95C7 /* VenueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueController.m; sourceTree = "<group>"; };
 		31758D871B325FFA009EE8B6 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31758D8B1B325FFA009EE8B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31758D8C1B325FFA009EE8B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -115,10 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				314C986A1B32736E007E95C7 /* Repository */,
-				314C984F1B32643A007E95C7 /* Router */,
-				314C984E1B326428007E95C7 /* Entity */,
-				314C984D1B326416007E95C7 /* Presenter */,
-				314C984C1B3263FB007E95C7 /* Interactor */,
+				314C984E1B326428007E95C7 /* Model */,
+				314C988C1B3392EA007E95C7 /* Controller */,
 				314C984B1B3263F5007E95C7 /* View */,
 			);
 			name = Venue;
@@ -137,46 +126,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		314C984C1B3263FB007E95C7 /* Interactor */ = {
+		314C984E1B326428007E95C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				314C98611B326A86007E95C7 /* VenueInteractor.h */,
-				314C98621B326A86007E95C7 /* VenueInteractor.m */,
+				314C98641B326B14007E95C7 /* VenueModel.h */,
+				314C98651B326B14007E95C7 /* VenueModel.m */,
+				314C98671B327233007E95C7 /* ScheduleModel.h */,
+				314C98681B327233007E95C7 /* ScheduleModel.m */,
 			);
-			name = Interactor;
-			sourceTree = "<group>";
-		};
-		314C984D1B326416007E95C7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				314C985E1B326A42007E95C7 /* VenuesPresenter.h */,
-				314C985F1B326A42007E95C7 /* VenuesPresenter.m */,
-				314C98791B32D95F007E95C7 /* VenuePresenter.h */,
-				314C987A1B32D95F007E95C7 /* VenuePresenter.m */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		314C984E1B326428007E95C7 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				314C98641B326B14007E95C7 /* VenueEntity.h */,
-				314C98651B326B14007E95C7 /* VenueEntity.m */,
-				314C98671B327233007E95C7 /* ScheduleEntity.h */,
-				314C98681B327233007E95C7 /* ScheduleEntity.m */,
-			);
-			name = Entity;
-			sourceTree = "<group>";
-		};
-		314C984F1B32643A007E95C7 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				314C985B1B3268FF007E95C7 /* VenuesRouter.h */,
-				314C985C1B3268FF007E95C7 /* VenuesRouter.m */,
-				314C98531B326644007E95C7 /* VenueRouter.h */,
-				314C98541B326644007E95C7 /* VenueRouter.m */,
-			);
-			name = Router;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		314C986A1B32736E007E95C7 /* Repository */ = {
@@ -188,6 +146,17 @@
 				314C98701B329E8B007E95C7 /* VenueServer.m */,
 			);
 			name = Repository;
+			sourceTree = "<group>";
+		};
+		314C988C1B3392EA007E95C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				314C988D1B339314007E95C7 /* VenuesController.h */,
+				314C988E1B339314007E95C7 /* VenuesController.m */,
+				314C98901B339B3A007E95C7 /* VenueController.h */,
+				314C98911B339B3A007E95C7 /* VenueController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		31758D7E1B325FFA009EE8B6 = {
@@ -405,20 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				314C987B1B32D95F007E95C7 /* VenuePresenter.m in Sources */,
 				314C98751B32C580007E95C7 /* VenueViewController.m in Sources */,
-				314C98661B326B14007E95C7 /* VenueEntity.m in Sources */,
-				314C98551B326644007E95C7 /* VenueRouter.m in Sources */,
+				314C98661B326B14007E95C7 /* VenueModel.m in Sources */,
+				314C98921B339B3A007E95C7 /* VenueController.m in Sources */,
 				314C98711B329E8B007E95C7 /* VenueServer.m in Sources */,
 				314C98591B32672D007E95C7 /* VenuesViewController.m in Sources */,
-				314C98631B326A86007E95C7 /* VenueInteractor.m in Sources */,
 				314C986D1B32738B007E95C7 /* VenueRepository.m in Sources */,
 				31758D901B325FFA009EE8B6 /* AppDelegate.m in Sources */,
-				314C98691B327233007E95C7 /* ScheduleEntity.m in Sources */,
+				314C98691B327233007E95C7 /* ScheduleModel.m in Sources */,
 				31758D8D1B325FFA009EE8B6 /* main.m in Sources */,
-				314C98601B326A42007E95C7 /* VenuesPresenter.m in Sources */,
-				314C985D1B3268FF007E95C7 /* VenuesRouter.m in Sources */,
 				314C98521B32657D007E95C7 /* JRTMainRouter.m in Sources */,
+				314C988F1B339314007E95C7 /* VenuesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

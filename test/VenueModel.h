@@ -9,9 +9,9 @@
 #import "JSONModel.h"
 
 //this model class is used to receive the json objects 
-@protocol ScheduleEntity @end
+@protocol ScheduleModel @end
 
-@interface VenueEntity : JSONModel
+@interface VenueModel : JSONModel
 @property (nonatomic)NSUInteger         venueId;
 @property (nonatomic)NSInteger          pcode;
 @property (nonatomic, strong)NSURL    * ticketLink;
@@ -26,5 +26,5 @@
 @property (nonatomic, strong)NSString * address;
 @property (nonatomic, strong)NSString * venueDescription;
 @property (nonatomic, strong)NSString * name;
-@property (nonatomic, strong)NSArray <ScheduleEntity, Optional>  * schedule;
+@property (nonatomic, strong)NSArray <ScheduleModel, Optional>  * schedule;
 @end

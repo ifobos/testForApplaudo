@@ -7,12 +7,12 @@
 //
 
 #import "VenueViewController.h"
-#import "VenuePresenter.h"
 #import <MapKit/MapKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "JRTMainRouter.h"
 
 @interface VenueViewController ()<MKMapViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
@@ -21,14 +21,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *scheduleLabel;
-@property (nonatomic, readonly)VenuePresenter *venuePresenter;
 @end
 
 @implementation VenueViewController
 
-- (VenuePresenter *)venuePresenter
+- (VenueController *)venueController
 {
-    return (VenuePresenter *)self.presenter;
+    if (!_venueController)
+    {
+        _venueController = [VenueController new];
+        _venueController.venueViewController = self;
+    }
+    return _venueController;
 }
 
 - (void)viewDidLoad
@@ -41,7 +45,7 @@
     [super viewDidLoad];
     
     [self setUp];
-    [self loadFromPresenter];
+    [self reloadData];
 }
 
 - (void)setUp
@@ -50,17 +54,17 @@
     [self.mapView setShowsUserLocation:YES];
 }
 
-- (void)loadFromPresenter
+- (void)reloadData
 {
-    self.nameLabel.text             = [self.venuePresenter name];
-    self.phoneLabel.text            = [self.venuePresenter phone];
-    self.tollFreePhoneLabel.text    = [self.venuePresenter tollfreephone];
-    self.addressLabel.text          = [self.venuePresenter fullAddress];
-    self.descriptionLabel.text      = [self.venuePresenter venueDescription];
-    [self.imageView sd_setImageWithURL:[self.venuePresenter imageUrl]];
+    self.nameLabel.text             = [self.venueController name];
+    self.phoneLabel.text            = [self.venueController phone];
+    self.tollFreePhoneLabel.text    = [self.venueController tollfreephone];
+    self.addressLabel.text          = [self.venueController fullAddress];
+    self.descriptionLabel.text      = [self.venueController venueDescription];
+    [self.imageView sd_setImageWithURL:[self.venueController imageUrl]];
     [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView setRegion: [self.mapView regionThatFits: [self.venuePresenter region] ] animated: YES];
-    [self.mapView addAnnotation:[self.venuePresenter point]];
+    [self.mapView setRegion: [self.mapView regionThatFits: [self.venueController region] ] animated: YES];
+    [self.mapView addAnnotation:[self.venueController point]];
     [self.tableView reloadData];
 }
 
@@ -74,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger number = [self.venuePresenter numberOfSchedule];
+    NSInteger number = [self.venueController numberOfSchedule];
     self.scheduleLabel.hidden = (number == 0);
     return number;
 }
@@ -86,15 +90,15 @@
     UITableViewCell *cell                   = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (!cell) cell                         = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     cell.selectionStyle                     = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text                     = [self.venuePresenter startDateScheduleAtIndex:indexPath.row];
-    cell.detailTextLabel.text               = [self.venuePresenter endDateScheduleAtIndex: indexPath.row];
+    cell.textLabel.text                     = [self.venueController startDateScheduleAtIndex:indexPath.row];
+    cell.detailTextLabel.text               = [self.venueController endDateScheduleAtIndex: indexPath.row];
     return cell;
 }
 
 
 - (IBAction)goToTicketLink:(id)sender
 {
-    NSURL *url =[self.venuePresenter ticketLink];
+    NSURL *url =[self.venueController ticketLink];
     if ([[url path] length] > 0)
     {
         [[UIApplication sharedApplication] openURL:url];

@@ -1,20 +1,21 @@
 //
-//  VenuePresenter.h
+//  VenueController.h
 //  test
 //
 //  Created by Juan Garcia on 18/6/15.
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
-#import "JRTViperPresenterClass.h"
-#import "VenueEntity.h"
-#import <MapKit/MapKit.h>
+@import Foundation;
+@import MapKit;
+#import "VenueModel.h"
 
-//the presenter is responsible to formatting data,
-//present the actions to interactor
+@class VenueViewController;
 
-@interface VenuePresenter : JRTViperPresenterClass
-- (void)setVenue:(VenueEntity *)venue;
+@interface VenueController : NSObject
+@property(nonatomic, strong)VenueViewController     *venueViewController;
+@property(nonatomic, strong)VenueModel             *venueEntity;
+- (void)reloadViewController;
 
 - (NSString*)name;
 - (NSString*)phone;
@@ -28,7 +29,4 @@
 - (NSInteger)numberOfSchedule;
 - (NSString*)startDateScheduleAtIndex:(NSInteger)index;
 - (NSString*)endDateScheduleAtIndex:(NSInteger)index;
-
-- (void)refreshView;
-
 @end

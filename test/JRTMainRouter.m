@@ -8,10 +8,6 @@
 
 #import "JRTMainRouter.h"
 
-
-NSString * const kFirstRouter   = @"VenuesRouter";
-NSString * const kSecondRouter  = @"VenueRouter";
-
 @interface JRTMainRouter ()
 @property (nonatomic, strong) UINavigationController    *mainNavigationController;
 @property (nonatomic, strong) UISplitViewController     *splitViewController;
@@ -43,7 +39,7 @@ NSString * const kSecondRouter  = @"VenueRouter";
     if (!_mainNavigationController)
     {
         _mainNavigationController = [UINavigationController new];
-        [self.firstRouter pushInNavigationController:_mainNavigationController animated:NO];
+        [_mainNavigationController pushViewController:self.firstViewController animated:NO];
     }
     return _mainNavigationController;
 }
@@ -53,24 +49,24 @@ NSString * const kSecondRouter  = @"VenueRouter";
     if (!_splitViewController)
     {
         _splitViewController                                = [UISplitViewController new];
-        UINavigationController *firstNavigationController   = [[UINavigationController alloc] initWithRootViewController:(UIViewController*)self.firstRouter.viewController];
-        UINavigationController *secondNavigationController  = [[UINavigationController alloc] initWithRootViewController:(UIViewController*)self.secondRouter.viewController];
-        _splitViewController.delegate                       = (id<UISplitViewControllerDelegate>)self.secondRouter.viewController;
+        UINavigationController *firstNavigationController   = [[UINavigationController alloc] initWithRootViewController:self.firstViewController];
+        UINavigationController *secondNavigationController  = [[UINavigationController alloc] initWithRootViewController:self.secondViewController];
+        _splitViewController.delegate                       = self.secondViewController;
         _splitViewController.viewControllers                = @[firstNavigationController, secondNavigationController];
     }
     return _splitViewController;
 }
 
--(id<RouterProtocol>)firstRouter
+-(VenuesViewController *)firstViewController
 {
-    if (!_firstRouter) _firstRouter = [[NSClassFromString(kFirstRouter) alloc] init];
-    return _firstRouter;
+    if (!_firstViewController) _firstViewController = [VenuesViewController new];
+    return _firstViewController;
 }
 
--(id<RouterProtocol>)secondRouter
+-(VenueViewController *)secondViewController
 {
-    if (!_secondRouter) _secondRouter = [[NSClassFromString(kSecondRouter) alloc] init];
-    return _secondRouter;
+    if (!_secondViewController) _secondViewController = [VenueViewController new];
+    return _secondViewController;
 }
 
 #pragma mark - Public
