@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		314C98521B32657D007E95C7 /* JRTMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98511B32657D007E95C7 /* JRTMainRouter.m */; };
+		314C98521B32657D007E95C7 /* MainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98511B32657D007E95C7 /* MainRouter.m */; };
 		314C98591B32672D007E95C7 /* VenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98571B32672D007E95C7 /* VenuesViewController.m */; };
 		314C985A1B32672D007E95C7 /* VenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314C98581B32672D007E95C7 /* VenuesViewController.xib */; };
 		314C98661B326B14007E95C7 /* VenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 314C98651B326B14007E95C7 /* VenueModel.m */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		314C98501B32657D007E95C7 /* JRTMainRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTMainRouter.h; sourceTree = "<group>"; };
-		314C98511B32657D007E95C7 /* JRTMainRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTMainRouter.m; sourceTree = "<group>"; };
+		314C98501B32657D007E95C7 /* MainRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRouter.h; sourceTree = "<group>"; };
+		314C98511B32657D007E95C7 /* MainRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRouter.m; sourceTree = "<group>"; };
 		314C98561B32672D007E95C7 /* VenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesViewController.h; sourceTree = "<group>"; };
 		314C98571B32672D007E95C7 /* VenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuesViewController.m; sourceTree = "<group>"; };
 		314C98581B32672D007E95C7 /* VenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenuesViewController.xib; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		31758D891B325FFA009EE8B6 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				314C98501B32657D007E95C7 /* JRTMainRouter.h */,
-				314C98511B32657D007E95C7 /* JRTMainRouter.m */,
+				314C98501B32657D007E95C7 /* MainRouter.h */,
+				314C98511B32657D007E95C7 /* MainRouter.m */,
 				314C98491B326394007E95C7 /* Modules */,
 				31758D8E1B325FFA009EE8B6 /* AppDelegate.h */,
 				31758D8F1B325FFA009EE8B6 /* AppDelegate.m */,
@@ -383,7 +383,7 @@
 				31758D901B325FFA009EE8B6 /* AppDelegate.m in Sources */,
 				314C98691B327233007E95C7 /* ScheduleModel.m in Sources */,
 				31758D8D1B325FFA009EE8B6 /* main.m in Sources */,
-				314C98521B32657D007E95C7 /* JRTMainRouter.m in Sources */,
+				314C98521B32657D007E95C7 /* MainRouter.m in Sources */,
 				314C988F1B339314007E95C7 /* VenuesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

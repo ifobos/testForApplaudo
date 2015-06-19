@@ -10,7 +10,7 @@
 #import "VenuesViewController.h"
 #import "VenueModel.h"
 #import "VenueRepository.h"
-#import "JRTMainRouter.h"
+#import "MainRouter.h"
 
 @interface VenuesController ()
 @property (nonatomic, strong)NSArray            * venues;
@@ -87,8 +87,8 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
-        [JRTMainRouter sharedInstance].secondViewController.venueController.venueEntity = targetVenue;
-        [[JRTMainRouter sharedInstance].secondViewController.venueController reloadViewController];
+        [MainRouter sharedInstance].secondViewController.venueController.venueEntity = targetVenue;
+        [[MainRouter sharedInstance].secondViewController.venueController reloadViewController];
     }
     else
     {

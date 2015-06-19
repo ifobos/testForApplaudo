@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JRTMainRouter.h"
+#import "MainRouter.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) JRTMainRouter *mainRouter;
+@property (nonatomic, strong) MainRouter *mainRouter;
 
 
 @end

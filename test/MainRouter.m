@@ -3,17 +3,17 @@
 //  
 //
 //  Created by Juan Garcia on 31/3/15.
-//  Copyright (c) 2015 Jerti LLC. All rights reserved.
+//  Copyright (c) 2015 Juan Garcia LLC. All rights reserved.
 //
 
-#import "JRTMainRouter.h"
+#import "MainRouter.h"
 
-@interface JRTMainRouter ()
+@interface MainRouter ()
 @property (nonatomic, strong) UINavigationController    *mainNavigationController;
 @property (nonatomic, strong) UISplitViewController     *splitViewController;
 @end
 
-@implementation JRTMainRouter
+@implementation MainRouter
 
 #pragma mark - Singleton
 

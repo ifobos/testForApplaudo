@@ -9,10 +9,9 @@
 #import "VenueViewController.h"
 #import <MapKit/MapKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "JRTMainRouter.h"
+#import "MainRouter.h"
 
 @interface VenueViewController ()<MKMapViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
@@ -39,7 +38,7 @@
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
-        self.navigationItem.leftBarButtonItem = [((UISplitViewController *)[[JRTMainRouter sharedInstance] rootViewController]) displayModeButtonItem];
+        self.navigationItem.leftBarButtonItem = [((UISplitViewController *)[[MainRouter sharedInstance] rootViewController]) displayModeButtonItem];
         self.navigationItem.leftItemsSupplementBackButton = YES;
     }
     [super viewDidLoad];

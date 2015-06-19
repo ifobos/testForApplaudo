@@ -3,13 +3,13 @@
 //  
 //
 //  Created by Juan Garcia on 31/3/15.
-//  Copyright (c) 2015 Jerti LLC. All rights reserved.
+//  Copyright (c) 2015 Juan Garcia LLC. All rights reserved.
 //
 
 @import UIKit;
 #import "VenuesViewController.h"
 #import "VenueViewController.h"
-@interface JRTMainRouter : NSObject
+@interface MainRouter : NSObject
 @property (nonatomic, strong)VenuesViewController   *firstViewController;
 @property (nonatomic, strong)VenueViewController    *secondViewController;
 

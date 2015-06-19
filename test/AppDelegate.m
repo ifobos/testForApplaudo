@@ -20,9 +20,9 @@
     return _window;
 }
 
--(JRTMainRouter *)mainRouter
+-(MainRouter *)mainRouter
 {
-    if (!_mainRouter) _mainRouter = [JRTMainRouter sharedInstance];
+    if (!_mainRouter) _mainRouter = [MainRouter sharedInstance];
     return _mainRouter;
 }
 
