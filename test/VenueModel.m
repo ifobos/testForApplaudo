@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
-#import "VenueEntity.h"
+#import "VenueModel.h"
 
-@implementation VenueEntity
+@implementation VenueModel
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{

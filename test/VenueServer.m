@@ -7,7 +7,7 @@
 //
 
 #import "VenueServer.h"
-#import "VenueEntity.h"
+#import "VenueModel.h"
 #import "AFNetworking.h"
 
 static NSString * const URLString = @"https://s3.amazonaws.com/jon-hancock-phunware/nflapi-static.json";
@@ -23,7 +23,7 @@ static NSString * const URLString = @"https://s3.amazonaws.com/jon-hancock-phunw
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSError *error;
-         NSArray * models = [VenueEntity arrayOfModelsFromDictionaries:responseObject error:&error];
+         NSArray * models = [VenueModel arrayOfModelsFromDictionaries:responseObject error:&error];
          if (error) failure(error);
          else success(models);
          

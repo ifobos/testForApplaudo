@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - JRTViperPattern (0.1)
   - JSONModel (1.1.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
@@ -28,13 +27,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - JRTViperPattern
   - JSONModel
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  JRTViperPattern: 70069c8019f9f6194d2abf0cc52a41b8751af9d9
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 

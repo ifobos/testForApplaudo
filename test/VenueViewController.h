@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
-#import "JRTViperTableViewControllerClass.h"
-@interface VenueViewController : JRTViperTableViewControllerClass <UISplitViewControllerDelegate>
-- (void)loadFromPresenter;
+@import UIKit;
+#import "VenueController.h"
+
+@interface VenueViewController : UITableViewController <UISplitViewControllerDelegate>
+@property(nonatomic, strong)VenueController * venueController;
+- (void)reloadData;
 @end

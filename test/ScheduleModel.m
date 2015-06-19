@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
-#import "ScheduleEntity.h"
+#import "ScheduleModel.h"
 
-@implementation ScheduleEntity
+@implementation ScheduleModel
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
