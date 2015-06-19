@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
+//  ViewController object is an object in an application
+//  that control the View Interface that users can see.
+
 #import "VenuesViewController.h"
 #import "VenuesController.h"
 
@@ -15,7 +18,9 @@
 
 @implementation VenuesViewController
 
--(VenuesController *)venuesController
+#pragma mark - Getter
+
+- (VenuesController *)venuesController
 {
     if (!_venuesController)
     {
@@ -24,6 +29,8 @@
     }
     return _venuesController;
 }
+
+#pragma mark - ViewController
 
 - (void)viewDidLoad
 {
@@ -34,13 +41,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.venuesController numberOfVenues];
 }
 

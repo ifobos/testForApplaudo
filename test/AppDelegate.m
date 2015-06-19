@@ -14,6 +14,8 @@
 
 @implementation AppDelegate
 
+#pragma mark - Getters
+
 -(UIWindow *)window
 {
     if (!_window) _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -26,10 +28,13 @@
     return _mainRouter;
 }
 
+#pragma mark - App Delegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    self.window.rootViewController = [self.mainRouter rootViewController]; //mainRouter It is responsible for loading the main navigation structure of the application
+//    mainRouter It is responsible for loading the main
+//    navigation structure of the application
+    self.window.rootViewController = [self.mainRouter rootViewController];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -55,6 +60,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - Interface Orientation
 
 - (NSUInteger) application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {

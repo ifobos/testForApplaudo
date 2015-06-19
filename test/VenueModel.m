@@ -6,9 +6,14 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
+//This model class is used to receive the json objects
+
 #import "VenueModel.h"
 
 @implementation VenueModel
+
+//mapping - "model properties" vs "json Attributes"
+
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{

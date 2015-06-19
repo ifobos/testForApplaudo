@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
+//  ViewController object is an object in an application
+//  that control the View Interface that users can see.
+
+@import MapKit;
 #import "VenueViewController.h"
-#import <MapKit/MapKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MainRouter.h"
 
@@ -24,6 +27,8 @@
 
 @implementation VenueViewController
 
+#pragma mark - Getter
+
 - (VenueController *)venueController
 {
     if (!_venueController)
@@ -34,7 +39,18 @@
     return _venueController;
 }
 
+#pragma mark - ViewController
+
 - (void)viewDidLoad
+{
+    [self setUp];
+    [super viewDidLoad];
+    [self reloadData];
+}
+
+#pragma mark - View Configuration 
+
+- (void)setUp
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
@@ -42,13 +58,6 @@
         self.navigationItem.leftItemsSupplementBackButton = YES;
     }
     [super viewDidLoad];
-    
-    [self setUp];
-    [self reloadData];
-}
-
-- (void)setUp
-{
     self.title = @"Details";
     [self.mapView setShowsUserLocation:YES];
 }
@@ -94,6 +103,7 @@
     return cell;
 }
 
+#pragma mark - Navigation
 
 - (IBAction)goToTicketLink:(id)sender
 {

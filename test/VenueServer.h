@@ -6,8 +6,12 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-//esta clase se utiliza como conector de servicio con la nube
+
+//Data source used by the repository to reach the
+//information provided by the cloud for this application.
+
+@import Foundation;
+
 @interface VenueServer : NSObject
 - (void)listWithSuccess:(void (^)(NSArray *venues))success failure:(void (^)(NSError *error))failure;
 @end

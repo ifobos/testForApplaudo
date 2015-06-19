@@ -6,13 +6,21 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
+//  In this particular architecture the controller
+//  object acts as an intermediary between Model and
+//  ViewController. Controller objects are thus a
+//  conduit through which view objects learn about
+//  changes in model objects.
+
 #import "VenueController.h"
 #import "VenueViewController.h"
 #import "ScheduleModel.h"
 
 @implementation VenueController
 
--(VenueModel *)venueEntity
+#pragma mark - Getter
+
+- (VenueModel *)venueEntity
 {
     if(!_venueEntity)       self.venueViewController.tableView.hidden = YES;
     else                    self.venueViewController.tableView.hidden = NO;
@@ -27,6 +35,8 @@
                                          userInfo:nil];
     return _venueViewController;
 }
+
+#pragma mark - Public
 
 - (void)reloadViewController
 {
@@ -77,14 +87,6 @@
     return self.venueEntity.imageUrl;
 }
 
-- (CLLocationCoordinate2D)coordinate
-{
-    CLLocationCoordinate2D      coordinate;
-    coordinate.latitude         = [self.venueEntity.latitude floatValue];
-    coordinate.longitude        = [self.venueEntity.longitude floatValue];
-    return coordinate;
-}
-
 - (MKCoordinateRegion)region
 {
     MKCoordinateRegion region   = MKCoordinateRegionMake ([self coordinate], MKCoordinateSpanMake (0.5, 0.5));
@@ -114,6 +116,16 @@
 {
     ScheduleModel *targetSchedule =  [self.venueEntity.schedule objectAtIndex:index];
     return [NSString stringWithFormat:@"End:  %@",[[self dateFormatter] stringFromDate:targetSchedule.endDate]];
+}
+
+#pragma mark - Helper
+
+- (CLLocationCoordinate2D)coordinate
+{
+    CLLocationCoordinate2D      coordinate;
+    coordinate.latitude         = [self.venueEntity.latitude floatValue];
+    coordinate.longitude        = [self.venueEntity.longitude floatValue];
+    return coordinate;
 }
 
 - (NSDateFormatter *)dateFormatter

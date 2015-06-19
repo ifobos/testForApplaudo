@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Juan Garcia. All rights reserved.
 //
 
+//This model class is used to receive the json sub-objects
+
 #import "JSONModel.h"
-//this model class is used to receive the json sub-objects
+
 @interface ScheduleModel : JSONModel
 @property (nonatomic, strong)NSDate *startDate;
 @property (nonatomic, strong)NSDate *endDate;

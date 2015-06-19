@@ -9,6 +9,9 @@
 #import "ScheduleModel.h"
 
 @implementation ScheduleModel
+
+//mapping - "model properties" vs "json Attributes"
+
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
